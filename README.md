@@ -7,6 +7,8 @@
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
 ![Vitest](https://img.shields.io/badge/Vitest-1.4-729B1B?logo=vitest)
 
+**Live Demo:** [https://urban-octo-train-549547826722.us-central1.run.app](https://urban-octo-train-549547826722.us-central1.run.app)
+
 A high-performance, responsive portfolio website built with modern web technologies. This project showcases a premium design aesthetic with smooth animations and a clean code architecture.
 
 ## 🚀 Features
