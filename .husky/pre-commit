@@ -1,2 +1,4 @@
+echo "Running lint check..."
 npm run lint
+echo "Building project..."
 npm run build
