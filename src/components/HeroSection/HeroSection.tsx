@@ -22,7 +22,10 @@ const HeroSection = ({ className, children }: props) => {
                     {/* Text */}
                     <h1 className="lg:text-9xl text-3xl font-thin text-center">ANKESH SHARMA</h1>
                     <div className="lg:text-3xl text-xl flex gap-1">
-                        <p className="flex items-center justify-center h-fit">&lt;{useTypewriterEffect(tags, 200)}<span className="animate-ping bg-white border-l border-white h-full"></span>/&gt;</p>
+                        <p className="flex items-center justify-center h-full overflow-hidden">
+                            &lt;{useTypewriterEffect(tags, 200)}
+                            <span className="animate-ping bg-white border-l border-white h-full"></span>
+                            /&gt;</p>
                     </div>
                 </div>
             </div>
