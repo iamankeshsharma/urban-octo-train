@@ -29,9 +29,9 @@ const NavigationBar = ({ className, children, links }: props) => {
             </button >
 
             {
-                < nav className={twMerge(`flex-col items-center justify-center h-screen lg:h-auto w-full`, openHamburger ? 'flex' : 'hidden lg:block')} >
+                < nav className={twMerge(`flex-col items-center justify-center h-screen lg:h-auto w-full`, className, openHamburger ? 'flex' : 'hidden lg:block')} >
                     {children}
-                    < ul className={twMerge(`relative rounded-lg bg-gray-900 shadow-2xl lg:shadow-none lg:bg-transparent flex flex-col lg:flex-row items-center justify-center h-1/2 w-1/2 lg:w-full gap-12 text-2xl lg:py-7`, className)} >
+                    < ul className="relative rounded-lg bg-gray-900 shadow-2xl lg:shadow-none lg:bg-transparent flex flex-col lg:flex-row items-center justify-center h-1/2 w-1/2 lg:w-full gap-12 text-2xl lg:py-7" >
                         < button onClick={() => setOpenHamburger(!openHamburger)}
                             className="absolute top-5 right-8 lg:hidden text-6xl font-thin cursor-pointer flex flex-col gap-2 rotate-45" >
                             +
