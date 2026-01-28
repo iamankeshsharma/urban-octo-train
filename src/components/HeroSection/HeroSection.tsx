@@ -9,14 +9,14 @@ type props = {
 
 const HeroSection = ({ className, children }: props) => {
     return (
-        <section className={twMerge(`w-full h-screen flex flex-col items-between justify-start lg:justify-center`, className)}>
+        <section className={twMerge(`w-full h-screen flex flex-col items-between justify-evenly lg:justify-center`, className)}>
             {children}
 
             <div className="flex flex-col lg:flex-row items-center justify-center w-full lg:w-6/7 lg:h-3/4 p-4">
                 {/* Hero*/}
                 <div className="flex items-center justify-center lg:w-1/2 lg:h-2/3 p-10">
                     {/* Image */}
-                    <img src="./assets/user.jpeg" className="rounded-full" alt="profile photo of ankesh" />
+                    <img src="./assets/user.jpeg" className="size-70 lg:size-96 rounded-full" alt="profile photo of ankesh" />
                 </div>
                 <div className="flex flex-col items-center justify-start lg:justify-center w-full lg:w-1/2 lg:h-2/3">
                     {/* Text */}
