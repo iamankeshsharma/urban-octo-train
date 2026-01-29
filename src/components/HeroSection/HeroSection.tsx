@@ -5,11 +5,12 @@ import { tags, skills } from "../../constants";
 type props = {
     className?: string;
     children?: React.ReactNode;
+    id?: string;
 }
 
-const HeroSection = ({ className, children }: props) => {
+const HeroSection = ({ id, className, children }: props) => {
     return (
-        <section className={twMerge(`w-full h-screen flex flex-col items-between justify-evenly lg:justify-center`, className)}>
+        <section id={id} className={twMerge(`w-full h-screen flex flex-col items-between justify-evenly lg:justify-center`, className)}>
             {children}
 
             <div className="flex flex-col lg:flex-row items-center justify-center w-full lg:w-6/7 lg:h-3/4 p-4">
