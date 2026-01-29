@@ -2,7 +2,8 @@ import NavigationBar from "./components/NavigationBar";
 import HeroSection from "./components/HeroSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectSection from "./components/ProjectSection";
-import { navLinks, experiences, projects } from "./constants";
+import { navLinks, experiences, projects, socialLinks } from "./constants";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <HeroSection id="home" />
       <ExperienceSection data={experiences} id="experience" />
       <ProjectSection data={projects} id="projects" />
+      <Footer data={socialLinks} />
     </div >
   )
 }

@@ -154,11 +154,11 @@ export const socialLinks = [
     name: "BlueSky",
     url: "https://bsky.app/profile/iamankeshsharma.bsky.social",
     icon: BlueSky
-  }
-  , {
-    name: "Github",
-    url: "https://github.com/iamankeshsharma",
-    icon: Github
+  },
+  {
+    name: "Discord",
+    url: "https://discord.com/users/codewithchai",
+    icon: Discord
   },
   {
     name: "LinkedIn",
@@ -171,8 +171,8 @@ export const socialLinks = [
     icon: Twitter
   },
   {
-    name: "Discord",
-    url: "https://discord.com/users/codewithchai",
-    icon: Discord
-  }
+    name: "Github",
+    url: "https://github.com/iamankeshsharma",
+    icon: Github
+  },
 ];
