@@ -11,7 +11,7 @@ type props = {
 
 const ExperienceSection = ({ id, data, className, children }: props) => {
     return (
-        <section id={id} className={twMerge(`w-full flex flex-col justify-between items-between px-5 lg:px-60 gap-10`, className)}>
+        <section id={id} className={twMerge(`w-full flex flex-col justify-between items-between py-20 px-5 lg:px-60 gap-10`, className)}>
             {children}
             <h2 className="text-2xl font-bold text-accent-green">&lt;Experience /&gt;</h2>
             <div className="relative flex h-full w-full">

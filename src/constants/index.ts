@@ -113,3 +113,37 @@ export const experiences = [
     ]
   }
 ];
+
+export const projects = [
+  {
+    name: "Weather App",
+    description: "Weather app is a simple weather app that uses OpenWeatherMap API to get the weather data of a city.",
+    tags: [
+      "react",
+      "weather app",
+      "api integration"
+    ],
+    link: "https://github.com/iamankeshsharma/weather-app"
+  },
+  {
+    name: "PresenterCanvasOverlay",
+    description: "Capture screen content or application windows, overlay live camera feed onto canvas, simulating a presenter delivering a presentation.",
+    tags: [
+      "python",
+      "opencv",
+      "mediapipe"
+    ],
+    link: "https://github.com/iamankeshsharma/PresenterCanvasOverlay"
+  },
+  {
+    name: "LittleBrother(GUI)",
+    description: "LittleBrother is an information collection tool (OSINT), It is basically a CLI based tool which aims to carry out research on a French, Swiss,Luxembourgish or Belgian person.It provides various modules that allow efficient searches. LittleBrother-GUI- is a extended version of that, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.",
+    tags: [
+      "osint",
+      "information gathering tool",
+      "cli tool",
+      "gui tool"
+    ],
+    link: "https://github.com/iamankeshsharma/LittleBrother-GUI-"
+  },
+];
