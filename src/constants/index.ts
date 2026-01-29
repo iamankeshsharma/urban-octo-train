@@ -1,4 +1,5 @@
 import { Angular, Bash, Bootstrap, CSS, Git, Html, Java, JavaScript, Linux, MongoDb, Python, React, TailwindCss, TypeScript } from "./svgs";
+import { Github, BlueSky, Twitter, LinkedIn, Discord } from "./svgs";
 
 export const navLinks = [
   {
@@ -145,5 +146,33 @@ export const projects = [
       "gui tool"
     ],
     link: "https://github.com/iamankeshsharma/LittleBrother-GUI-"
+  },
+];
+
+export const socialLinks = [
+  {
+    name: "BlueSky",
+    url: "https://bsky.app/profile/iamankeshsharma.bsky.social",
+    icon: BlueSky
+  },
+  {
+    name: "Discord",
+    url: "https://discord.com/users/codewithchai",
+    icon: Discord
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ankesh054/",
+    icon: LinkedIn
+  },
+  {
+    name: "Twitter",
+    url: "https://x.com/imankeshsharma",
+    icon: Twitter
+  },
+  {
+    name: "Github",
+    url: "https://github.com/iamankeshsharma",
+    icon: Github
   },
 ];
