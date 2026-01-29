@@ -13,22 +13,37 @@ const ContactUs = ({ id, className, children }: props) => {
         email: "",
         message: "",
     });
-    const turnstileRendered = useRef(false);
-
     useEffect(() => {
-        if (turnstileRendered.current) return;
-        turnstileRendered.current = true;
+        if (typeof turnstile === 'undefined') return;
 
-        widgetId.current = turnstile.render("#turnstile-container", {
-            sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
-            callback: function (token: string) {
-                console.log("Success:", token);
-            },
-            errorCallback: function (error: any) {
-                console.log("Error:", error);
-                turnstile.reset(widgetId.current || "");
-            },
-        });
+        // Clean up previous instance if it exists (safety check)
+        if (widgetId.current) {
+            turnstile.remove(widgetId.current);
+            widgetId.current = null;
+        }
+
+        try {
+            widgetId.current = turnstile.render("#turnstile-container", {
+                sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
+                callback: function (token: string) {
+                    console.log("Success:", token);
+                },
+                errorCallback: function (error: any) {
+                    console.log("Error:", error);
+                    // Just reset on error, don't remove unless unmounting
+                    if (widgetId.current) turnstile.reset(widgetId.current);
+                },
+            });
+        } catch (error) {
+            console.error("Turnstile render error:", error);
+        }
+
+        return () => {
+            if (widgetId.current) {
+                turnstile.remove(widgetId.current);
+                widgetId.current = null;
+            }
+        };
     }, []);
 
     return (
