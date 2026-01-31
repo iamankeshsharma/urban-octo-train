@@ -17,7 +17,7 @@ const NavigationBar = ({ className, children, links }: props) => {
     const [openHamburger, setOpenHamburger] = useState(false);
     return (
         <>
-            <button onClick={() => setOpenHamburger(!openHamburger)} className="lg:hidden fixed right-10 top-10 text-6xl font-thin cursor-pointer flex flex-col gap-2">
+            <button onClick={() => setOpenHamburger(!openHamburger)} className="lg:hidden fixed right-10 top-10 text-6xl font-thin cursor-pointer flex flex-col gap-2 z-50">
                 {
                     !openHamburger &&
                     <>

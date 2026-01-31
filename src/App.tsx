@@ -4,6 +4,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import ProjectSection from "./components/ProjectSection";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import FooterNote from "./components/FooterNote";
 import { navLinks, experiences, projects, socialLinks } from "./constants";
 
 function App() {
@@ -14,8 +15,10 @@ function App() {
       <HeroSection id="home" />
       <ExperienceSection data={experiences} id="experience" />
       <ProjectSection data={projects} id="projects" />
-      <ContactUs id="contact" />
-      <Footer data={socialLinks} />
+      <ContactUs id="contact" className="h-full">
+        <Footer data={socialLinks} />
+      </ContactUs>
+      <FooterNote />
     </div >
   )
 }
