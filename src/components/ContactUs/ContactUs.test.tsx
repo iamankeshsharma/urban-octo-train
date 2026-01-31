@@ -11,7 +11,7 @@ vi.mock("../../api/contact", () => ({
 describe("ContactUs", () => {
     // Setup Turnstile mock
     const mockTurnstile = {
-        render: vi.fn((_selector: unknown, _options: { callback: (token: string) => void }) => {
+        render: vi.fn((_selector: unknown, _options: any) => {
             // Simulate successful render by storing the callback and returning a widget ID
             // We can manually trigger the callback if we want to simulate captcha completion
             return "widget-id-123";
@@ -148,5 +148,23 @@ describe("ContactUs", () => {
 
         // Check error message
         expect(await screen.findByText("Server error")).toBeInTheDocument();
+        
+        // Check reset was called
+        expect(mockTurnstile.reset).toHaveBeenCalledWith("widget-id-123");
+    });
+
+    it("resets turnstile widget when token expires", async () => {
+        render(<ContactUs />);
+        
+        // Simulate render callback to ensure widgetId is set
+        const renderCall = mockTurnstile.render.mock.calls[0];
+        const options = renderCall[1];
+        
+        // Trigger expired callback
+        await act(async () => {
+            options["expired-callback"]();
+        });
+
+        expect(mockTurnstile.reset).toHaveBeenCalledWith("widget-id-123");
     });
 });

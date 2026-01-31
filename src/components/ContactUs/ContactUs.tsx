@@ -50,6 +50,7 @@ const ContactUs = ({ id, className, children }: props) => {
                 },
                 "expired-callback": function () {
                     setTurnstileToken(null);
+                    if (widgetId.current) turnstile.reset(widgetId.current);
                 }
             });
         } catch (error) {
@@ -114,8 +115,6 @@ const ContactUs = ({ id, className, children }: props) => {
             if (response.success) {
                 setSubmissionStatus({ success: true, message: response.message || "Message sent successfully!" });
                 setFormData({ email: "", message: "" });
-                setTurnstileToken(null);
-                if (widgetId.current) turnstile.reset(widgetId.current);
             } else {
                 setSubmissionStatus({ success: false, message: response.message || "Failed to send message. Please try again." });
             }
@@ -123,6 +122,8 @@ const ContactUs = ({ id, className, children }: props) => {
             setSubmissionStatus({ success: false, message: "An unexpected error occurred. Please try again." });
         } finally {
             setIsSubmitting(false);
+            setTurnstileToken(null);
+            if (widgetId.current && typeof turnstile !== 'undefined') turnstile.reset(widgetId.current);
         }
     };
 
