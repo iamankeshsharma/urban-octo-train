@@ -2,8 +2,10 @@ import NavigationBar from "./components/NavigationBar";
 import HeroSection from "./components/HeroSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectSection from "./components/ProjectSection";
-import { navLinks, experiences, projects, socialLinks } from "./constants";
+import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import FooterNote from "./components/FooterNote";
+import { navLinks, experiences, projects, socialLinks } from "./constants";
 
 function App() {
 
@@ -13,7 +15,10 @@ function App() {
       <HeroSection id="home" />
       <ExperienceSection data={experiences} id="experience" />
       <ProjectSection data={projects} id="projects" />
-      <Footer data={socialLinks} />
+      <ContactUs id="contact" className="h-full">
+        <Footer data={socialLinks} />
+      </ContactUs>
+      <FooterNote />
     </div >
   )
 }
