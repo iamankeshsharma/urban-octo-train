@@ -2,8 +2,8 @@ node_modules
 dist
 .git
 .gitignore
-.env
-.env.*
+# .env
+# .env.*
 README.md
 task.md
 Dockerfile
