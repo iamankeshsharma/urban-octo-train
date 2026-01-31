@@ -74,7 +74,7 @@ describe("ContactUs", () => {
         });
 
         render(<ContactUs />);
-        
+
         // Fill form
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: "test@example.com" } });
         fireEvent.change(screen.getByLabelText(/Message/i), { target: { value: "Hello world" } });
@@ -83,9 +83,9 @@ describe("ContactUs", () => {
         // We need to capture the callback passed to turnstile.render and call it
         const renderCall = mockTurnstile.render.mock.calls[0];
         const options = renderCall[1];
-        
+
         await act(async () => {
-             options.callback("mock-token");
+            options.callback("mock-token");
         });
 
         // Click submit
@@ -105,7 +105,7 @@ describe("ContactUs", () => {
 
         // Check success message
         expect(await screen.findByText("Message sent successfully!")).toBeInTheDocument();
-        
+
         // Check form reset
         expect((screen.getByLabelText(/Email/i) as HTMLInputElement).value).toBe("");
         expect((screen.getByLabelText(/Message/i) as HTMLTextAreaElement).value).toBe("");
@@ -119,14 +119,14 @@ describe("ContactUs", () => {
         });
 
         render(<ContactUs />);
-        
+
         // Fill form and simulate token
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: "test@example.com" } });
         fireEvent.change(screen.getByLabelText(/Message/i), { target: { value: "Hello world" } });
 
         const renderCall = mockTurnstile.render.mock.calls[0];
         const options = renderCall[1];
-        
+
         await act(async () => {
             options.callback("mock-token");
         });
